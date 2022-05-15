@@ -1,0 +1,2342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1765</width>
+    <height>778</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1765</width>
+    <height>778</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>光学软件——国产化</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1765</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menufile">
+    <property name="title">
+     <string>文档</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_Ad"/>
+    <addaction name="actionUse_Session_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionBackup_To_Archive_File"/>
+    <addaction name="actionRestore_From_Archive_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionSequential_or_Mixed_Sequential_Non_Sequential_Mode"/>
+    <addaction name="actionNon_Sequential_Mode"/>
+    <addaction name="separator"/>
+    <addaction name="actionInsert_Lens"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuedit">
+    <property name="title">
+     <string>编辑器</string>
+    </property>
+    <addaction name="actionLens_Data"/>
+    <addaction name="actionMerit_Function"/>
+    <addaction name="actionMulti_Configuration"/>
+    <addaction name="actionTolerance_Data"/>
+    <addaction name="actionExtra_Data"/>
+    <addaction name="actionNon_Sequential_Components"/>
+    <addaction name="separator"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+   </widget>
+   <widget class="QMenu" name="menusystem">
+    <property name="title">
+     <string>系统</string>
+    </property>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionUpdate_All"/>
+    <addaction name="separator"/>
+    <addaction name="actionGeneral"/>
+    <addaction name="actionFields"/>
+    <addaction name="actionWavelengths"/>
+    <addaction name="separator"/>
+    <addaction name="actionNext_Configuration"/>
+    <addaction name="actionLast_Configuration"/>
+   </widget>
+   <widget class="QMenu" name="menuanalyse">
+    <property name="title">
+     <string>分析</string>
+    </property>
+    <widget class="QMenu" name="menuLayout">
+     <property name="title">
+      <string>视图</string>
+     </property>
+     <addaction name="action2D_Layout"/>
+     <addaction name="action3D_Layout"/>
+     <addaction name="actionShaded_Model"/>
+     <addaction name="actionZemax_Element_Drawing"/>
+     <addaction name="actionISO_Element_Drawing"/>
+     <addaction name="separator"/>
+     <addaction name="actionNSC_3D_Layout"/>
+     <addaction name="actionNSC_Shaded_Model"/>
+     <addaction name="actionNSC_Object_Viewer"/>
+     <addaction name="actionCAD_File_Part_Viewer"/>
+    </widget>
+    <widget class="QMenu" name="menuFans">
+     <property name="title">
+      <string>光扇图</string>
+     </property>
+     <addaction name="actionRay_Aberration"/>
+     <addaction name="actionOptical_Path"/>
+     <addaction name="actionPupil_Aberration"/>
+    </widget>
+    <widget class="QMenu" name="menuSpot_Diagrams">
+     <property name="title">
+      <string>点列图</string>
+     </property>
+     <addaction name="actionStandard"/>
+     <addaction name="actionThrough_Focus"/>
+     <addaction name="actionFull_Field"/>
+     <addaction name="actionMatrix"/>
+     <addaction name="actionConfiguration_Matrix"/>
+    </widget>
+    <widget class="QMenu" name="menuMTF">
+     <property name="title">
+      <string>MTF</string>
+     </property>
+     <addaction name="actionFFT_MTF"/>
+     <addaction name="actionFFT_Through_Focus_MTF"/>
+     <addaction name="actionFFT_Surface_MTF"/>
+     <addaction name="actionFFT_MTF_vs_Field"/>
+     <addaction name="actionFFT_MTF_Map"/>
+     <addaction name="separator"/>
+     <addaction name="actionHuygens_MTF"/>
+     <addaction name="actionHuygens_Through_Focus_MTF"/>
+     <addaction name="actionHuygens_Surface_MTF"/>
+     <addaction name="actionHuygens_MTF_vs_Field"/>
+     <addaction name="separator"/>
+     <addaction name="actionGeometric_MTF"/>
+     <addaction name="actionGeometric_Through_Focus_MTF"/>
+     <addaction name="actionGeometric_MTF_vs_Field"/>
+     <addaction name="actionGeometric_MTF_Map"/>
+    </widget>
+    <widget class="QMenu" name="menuPSF">
+     <property name="title">
+      <string>点扩散函数</string>
+     </property>
+     <addaction name="actionFFT_PSF"/>
+     <addaction name="actionFFT_PSF_Cross_Section"/>
+     <addaction name="separator"/>
+     <addaction name="actionFFT_Line_Edge_Spread"/>
+     <addaction name="separator"/>
+     <addaction name="actionHuygens_PSF"/>
+     <addaction name="actionHuygens_PSF_Cross_Section"/>
+    </widget>
+    <widget class="QMenu" name="menuWavefront">
+     <property name="title">
+      <string>Wavefront</string>
+     </property>
+     <addaction name="actionWavefront_Map"/>
+     <addaction name="actionInterferogram"/>
+     <addaction name="actionFoucault"/>
+    </widget>
+    <widget class="QMenu" name="menuSurface">
+     <property name="title">
+      <string>Surface</string>
+     </property>
+     <addaction name="actionSurface_Sag"/>
+     <addaction name="actionSurface_Phase"/>
+     <addaction name="actionSurface_2"/>
+     <addaction name="actionSurface_Phase_Cross_Section"/>
+     <addaction name="actionSurface_Curvature_Cross_Section"/>
+    </widget>
+    <widget class="QMenu" name="menuRMS">
+     <property name="title">
+      <string>RMS</string>
+     </property>
+     <addaction name="actionRMS_vs_Field"/>
+     <addaction name="actionRMS_vs_Wavelength"/>
+     <addaction name="actionRMS_vs_Focus"/>
+     <addaction name="actionRMS_Field_Map"/>
+    </widget>
+    <widget class="QMenu" name="menuEncircled_Energy">
+     <property name="title">
+      <string>圈入能量</string>
+     </property>
+     <addaction name="actionDiffraction"/>
+     <addaction name="actionGeometric"/>
+     <addaction name="actionGeometric_Line_Edge_Spread"/>
+     <addaction name="actionExtended_Source"/>
+    </widget>
+    <widget class="QMenu" name="menuImage_Simulation">
+     <property name="title">
+      <string>Image Simulation</string>
+     </property>
+     <addaction name="actionImage_Simulation_2"/>
+     <addaction name="separator"/>
+     <addaction name="actionGeometric_Image_Analysis"/>
+     <addaction name="actionGeometric_Bitmap_Image_Analysis"/>
+     <addaction name="actionLight_Source_Analysis"/>
+     <addaction name="actionPartially_Coherent_Image_Analysis"/>
+     <addaction name="actionExtended_Diffraction_Image_Analysis"/>
+     <addaction name="separator"/>
+     <addaction name="actionIMA_BIM_File_Viewer"/>
+     <addaction name="actionBitmap_File_Viewer"/>
+    </widget>
+    <widget class="QMenu" name="menuBiocular_Analysis">
+     <property name="title">
+      <string>Biocular Analysis</string>
+     </property>
+     <addaction name="actionField_Of_View"/>
+     <addaction name="actionDipvergence_Convergence"/>
+    </widget>
+    <widget class="QMenu" name="menuMiscellaneous">
+     <property name="title">
+      <string>Miscellaneous</string>
+     </property>
+     <addaction name="actionField_Curv_Distortion"/>
+     <addaction name="actionGrid_Distortion"/>
+     <addaction name="actionRelative_Illumination"/>
+     <addaction name="actionVignetting_Plot"/>
+     <addaction name="actionFootprint_Diagram"/>
+     <addaction name="actionLongitudinal_Aberration"/>
+     <addaction name="actionLatreral_Color"/>
+     <addaction name="actionY_Ybar_Drawing"/>
+     <addaction name="actionChromatic_Focal_Shift"/>
+     <addaction name="actionSystem_Summary_Graphic"/>
+     <addaction name="actionPower_Field_Map"/>
+     <addaction name="actionPower_Pupil_Map"/>
+     <addaction name="actionIncident_Angle_vs_Image_Height"/>
+    </widget>
+    <widget class="QMenu" name="menuAberration_Coefficients">
+     <property name="title">
+      <string>Aberration Coefficients</string>
+     </property>
+     <addaction name="actionSeidel_Coefficients"/>
+     <addaction name="actionSeidel_Diagram"/>
+     <addaction name="actionZernike_Fringe_Coefficients"/>
+     <addaction name="actionZernike_Standard_Coefficients"/>
+     <addaction name="actionZernike_Annular_Coefficients"/>
+     <addaction name="actionZernike_Coefficients_vs_Field"/>
+    </widget>
+    <widget class="QMenu" name="menuCalculations">
+     <property name="title">
+      <string>Calculations</string>
+     </property>
+     <addaction name="actionRay_Trace"/>
+     <addaction name="actionFiber_Coupling_Efficiency"/>
+     <addaction name="actionYNI_Contributions"/>
+     <addaction name="actionSag_Table"/>
+     <addaction name="actionCardinal_Points"/>
+    </widget>
+    <widget class="QMenu" name="menuGlass_and_Gradient_Index">
+     <property name="title">
+      <string>Glass and Gradient Index</string>
+     </property>
+     <addaction name="actionDispersion_Diagram"/>
+     <addaction name="actionGlass_Map"/>
+     <addaction name="actionAthermal_Glass_Map"/>
+     <addaction name="actionInternal_Transmission_vx_Wavelength"/>
+     <addaction name="actionDispersion_vs_Wavelength"/>
+     <addaction name="actionGrin_Profile"/>
+     <addaction name="actionGradium_Profile"/>
+    </widget>
+    <widget class="QMenu" name="menuUniversal_Plot">
+     <property name="title">
+      <string>Universal Plot</string>
+     </property>
+     <widget class="QMenu" name="menuUniversal_Plot_1D">
+      <property name="title">
+       <string>Universal Plot 1D</string>
+      </property>
+      <addaction name="actionNew_Universal_Plot_1D"/>
+      <addaction name="actionTEST_OLD"/>
+     </widget>
+     <widget class="QMenu" name="menuUniversal_Plot_2D">
+      <property name="title">
+       <string>Universal Plot 2D</string>
+      </property>
+      <addaction name="actionNew_Universal_Plot_2D"/>
+     </widget>
+     <addaction name="menuUniversal_Plot_1D"/>
+     <addaction name="menuUniversal_Plot_2D"/>
+    </widget>
+    <widget class="QMenu" name="menuPolarization">
+     <property name="title">
+      <string>Polarization</string>
+     </property>
+     <addaction name="actionPolarization_Ray_Trace"/>
+     <addaction name="actionPolarization_Pupil_Map"/>
+     <addaction name="actionTransmission"/>
+     <addaction name="actionPhase_Aberration"/>
+     <addaction name="actionTransmission_Fan"/>
+    </widget>
+    <widget class="QMenu" name="menuCoatings">
+     <property name="title">
+      <string>Coatings</string>
+     </property>
+     <addaction name="actionReflection_vs_Angle"/>
+     <addaction name="actionTransmission_vs_Angle"/>
+     <addaction name="actionAbsorption_vs_Angle"/>
+     <addaction name="actionDiattenuation_vs_Angle"/>
+     <addaction name="actionPhase_vs_Angle"/>
+     <addaction name="actionRetardance"/>
+     <addaction name="separator"/>
+     <addaction name="actionReflection_vs_Wavelength"/>
+     <addaction name="actionTransmission_vs_Wavelength"/>
+     <addaction name="actionAbsorption_vs_Wavelength"/>
+     <addaction name="actionDiattenuation_vs_Wavelength"/>
+     <addaction name="actionPhase_vs_Wavelength"/>
+     <addaction name="actionRetardance_vs_Wavelength"/>
+    </widget>
+    <widget class="QMenu" name="menuPhysical_Optics">
+     <property name="title">
+      <string>Physical Optics</string>
+     </property>
+     <addaction name="actionParaxial_Gaussian_Beam"/>
+     <addaction name="actionSkew_Gaussian_Beam"/>
+     <addaction name="actionPhysical_Optics_Propagation"/>
+     <addaction name="actionBeam_File_Viewer"/>
+    </widget>
+    <widget class="QMenu" name="menuNSC_Ray_Tracing">
+     <property name="title">
+      <string>NSC Ray Tracing</string>
+     </property>
+     <widget class="QMenu" name="menuRay_Database_Analysis">
+      <property name="title">
+       <string>Ray Database Analysis</string>
+      </property>
+      <addaction name="actionPath_Analysis"/>
+      <addaction name="actionFlux_vs_Wavelength"/>
+     </widget>
+     <addaction name="actionRay_Trace_2"/>
+     <addaction name="actionLighting_Trace"/>
+     <addaction name="separator"/>
+     <addaction name="actionDetector_Viewer"/>
+     <addaction name="actionRay_Database_Viewer"/>
+     <addaction name="menuRay_Database_Analysis"/>
+     <addaction name="actionReverseRadiance_Analysis"/>
+    </widget>
+    <widget class="QMenu" name="menuSource_Viewers">
+     <property name="title">
+      <string>Source Viewers</string>
+     </property>
+     <addaction name="actionDirectivity_Plot"/>
+     <addaction name="actionPolar_Plot"/>
+     <addaction name="actionIllumination_Map"/>
+     <addaction name="actionSpectrum_Plot"/>
+     <addaction name="actionRadiant_Source_Model_Viewer"/>
+     <addaction name="actionCIE_1931_Color_Chart"/>
+     <addaction name="actionCIE_1976_Color_Chart"/>
+    </widget>
+    <widget class="QMenu" name="menuScatter_Viewers">
+     <property name="title">
+      <string>Scatter Viewers</string>
+     </property>
+     <addaction name="actionPolar_Plot_2"/>
+     <addaction name="actionScatter_Function_Viewer"/>
+    </widget>
+    <widget class="QMenu" name="menuObsolete">
+     <property name="title">
+      <string>Obsolete</string>
+     </property>
+     <addaction name="actionWireframe"/>
+     <addaction name="actionSolid_Model"/>
+     <addaction name="actionIllumination_XY_Scan"/>
+     <addaction name="actionIllumination_2D_Surface"/>
+     <addaction name="actionExport_IGES_Line_Work"/>
+     <addaction name="actionExport_2D_DXF_File"/>
+     <addaction name="actionExport_3D_DXF_File"/>
+     <addaction name="actionConjugate_Surface_Analysis"/>
+    </widget>
+    <addaction name="menuLayout"/>
+    <addaction name="menuFans"/>
+    <addaction name="menuSpot_Diagrams"/>
+    <addaction name="menuMTF"/>
+    <addaction name="menuPSF"/>
+    <addaction name="menuWavefront"/>
+    <addaction name="menuSurface"/>
+    <addaction name="menuRMS"/>
+    <addaction name="menuEncircled_Energy"/>
+    <addaction name="menuImage_Simulation"/>
+    <addaction name="menuBiocular_Analysis"/>
+    <addaction name="menuMiscellaneous"/>
+    <addaction name="menuAberration_Coefficients"/>
+    <addaction name="menuCalculations"/>
+    <addaction name="menuGlass_and_Gradient_Index"/>
+    <addaction name="menuUniversal_Plot"/>
+    <addaction name="menuPolarization"/>
+    <addaction name="menuCoatings"/>
+    <addaction name="menuPhysical_Optics"/>
+    <addaction name="menuNSC_Ray_Tracing"/>
+    <addaction name="menuSource_Viewers"/>
+    <addaction name="menuScatter_Viewers"/>
+    <addaction name="menuObsolete"/>
+   </widget>
+   <widget class="QMenu" name="menutool">
+    <property name="title">
+     <string>工具</string>
+    </property>
+    <widget class="QMenu" name="menuDesign">
+     <property name="title">
+      <string>设计</string>
+     </property>
+     <addaction name="actionLocal_Optimization"/>
+     <addaction name="actionGlobal_Optimization"/>
+     <addaction name="actionHammer_Optimization"/>
+     <addaction name="actionVisual_Optimization"/>
+     <addaction name="actionQuick_Focus"/>
+     <addaction name="actionQuick_Adjust"/>
+     <addaction name="actionSlider"/>
+     <addaction name="separator"/>
+     <addaction name="actionFind_Best_Asphere"/>
+     <addaction name="actionConvert_Asphere_Type"/>
+     <addaction name="actionMerit_Function_Listing"/>
+     <addaction name="actionGlass_Substitution_Template"/>
+     <addaction name="actionStock_Lens_Matching"/>
+     <addaction name="separator"/>
+     <addaction name="actionRemove_All_Variables"/>
+     <addaction name="actionMake_All_Radii_Variable"/>
+     <addaction name="actionMake_All_Thicknesses_Variable"/>
+     <addaction name="separator"/>
+     <addaction name="actionZemax_Part_Designer"/>
+    </widget>
+    <widget class="QMenu" name="menuModify">
+     <property name="title">
+      <string>Modify</string>
+     </property>
+     <addaction name="actionTilt_Decenter_Elements"/>
+     <addaction name="actionReverse_Elements"/>
+     <addaction name="actionScale_Lens"/>
+     <addaction name="actionMake_Focal"/>
+     <addaction name="separator"/>
+     <addaction name="actionAdd_Fold_Mirror"/>
+     <addaction name="actionDelete_Fold_Mirror"/>
+     <addaction name="actionMake_Double_Pass"/>
+     <addaction name="separator"/>
+     <addaction name="actionLocal_To_Global"/>
+     <addaction name="actionGlobal_To_Local"/>
+     <addaction name="separator"/>
+     <addaction name="actionConvert_Semi_Diameters_to_Circular_Apertures"/>
+     <addaction name="actionConvert_Semi_Diameters_to_Floating_Apertures"/>
+     <addaction name="actionConvert_Semi_Diameters_to_Maximum_Apertures"/>
+     <addaction name="actionRemove_All_Apertures"/>
+     <addaction name="actionReplace_Vignetting_With_Apertures"/>
+    </widget>
+    <widget class="QMenu" name="menuTolerancing">
+     <property name="title">
+      <string>公差</string>
+     </property>
+     <addaction name="actionTolerancing_2"/>
+     <addaction name="actionTolerance_Listing"/>
+     <addaction name="actionTolerance_Summary"/>
+    </widget>
+    <widget class="QMenu" name="menuCatalogs">
+     <property name="title">
+      <string>数据库</string>
+     </property>
+     <addaction name="actionGlass_Catalogs"/>
+     <addaction name="actionGlass_Compare"/>
+     <addaction name="actionGlass_Fitting"/>
+     <addaction name="separator"/>
+     <addaction name="actionLens_Catalogs"/>
+     <addaction name="actionMake_Private_Lens_Catalog"/>
+     <addaction name="separator"/>
+     <addaction name="actionTest_Plate_Fitting"/>
+     <addaction name="actionTest_Plate_Lists"/>
+     <addaction name="separator"/>
+     <addaction name="actionEdit_Coating_File"/>
+     <addaction name="actionReload_Coating_File"/>
+     <addaction name="actionAdd_Coatings_to_All_Surfaces"/>
+     <addaction name="actionCoating_Listing"/>
+     <addaction name="actionExport_Encrypted_Coating"/>
+    </widget>
+    <widget class="QMenu" name="menuExport_Explode_Data">
+     <property name="title">
+      <string>Export/Explode Data</string>
+     </property>
+     <addaction name="actionExport_CAD_File"/>
+     <addaction name="separator"/>
+     <addaction name="actionExplode_SolidWorks_Assembly"/>
+     <addaction name="actionExplode_Autodesk_Inventor_Assembly"/>
+     <addaction name="actionExplode_Creo_Parametric_Assembly"/>
+     <addaction name="actionExplode_CAD_Assembly"/>
+     <addaction name="separator"/>
+     <addaction name="actionExport_Zemax_Black_Box_Data"/>
+    </widget>
+    <widget class="QMenu" name="menuSources">
+     <property name="title">
+      <string>Sources</string>
+     </property>
+     <addaction name="actionDownload_Radiant_Source_Model_Data"/>
+     <addaction name="actionGenerate_Radiant_Source_Model_Rays"/>
+     <addaction name="actionDownload_IES_Source_File"/>
+     <addaction name="separator"/>
+     <addaction name="actionConvert_to_Spectral_Source_File"/>
+     <addaction name="actionConcatenate_Spectral_Source_Files"/>
+     <addaction name="actionConvert_SDF_To_IES"/>
+    </widget>
+    <widget class="QMenu" name="menuScatter">
+     <property name="title">
+      <string>Scatter</string>
+     </property>
+     <addaction name="actionDownload_IS_Scatter_Catalog_Data"/>
+     <addaction name="separator"/>
+     <addaction name="actionABg_Scatter_Data_Catalogs"/>
+    </widget>
+    <widget class="QMenu" name="menuMiscellaneous_2">
+     <property name="title">
+      <string>Miscellaneous</string>
+     </property>
+     <addaction name="actionGhost_Focus_Generator"/>
+     <addaction name="actionPerformance_Test"/>
+     <addaction name="separator"/>
+     <addaction name="actionLock_All_Windows"/>
+     <addaction name="actionUnlock_All_Windows"/>
+     <addaction name="separator"/>
+     <addaction name="actionConvert_To_NSC_Group"/>
+     <addaction name="actionConvert_File_Formats"/>
+     <addaction name="actionGenerate_MAT_Files"/>
+     <addaction name="separator"/>
+     <addaction name="actionTest_Network_License_Server"/>
+    </widget>
+    <addaction name="menuDesign"/>
+    <addaction name="menuModify"/>
+    <addaction name="menuTolerancing"/>
+    <addaction name="menuCatalogs"/>
+    <addaction name="menuExport_Explode_Data"/>
+    <addaction name="menuSources"/>
+    <addaction name="menuScatter"/>
+    <addaction name="menuMiscellaneous_2"/>
+   </widget>
+   <widget class="QMenu" name="menureport">
+    <property name="title">
+     <string>报告</string>
+    </property>
+    <widget class="QMenu" name="menuReport_Graphic_4">
+     <property name="title">
+      <string>Report Graphic 4</string>
+     </property>
+     <addaction name="actionNew_Report_4"/>
+    </widget>
+    <widget class="QMenu" name="menuReport_Graphic_6">
+     <property name="title">
+      <string>Report Graphic 6</string>
+     </property>
+     <addaction name="actionNew_Report_6"/>
+    </widget>
+    <addaction name="actionSurface_Data"/>
+    <addaction name="actionSystem_Data"/>
+    <addaction name="actionPrescription_Data"/>
+    <addaction name="actionSystem_Check"/>
+    <addaction name="separator"/>
+    <addaction name="menuReport_Graphic_4"/>
+    <addaction name="menuReport_Graphic_6"/>
+   </widget>
+   <widget class="QMenu" name="menuMacros">
+    <property name="title">
+     <string>宏</string>
+    </property>
+    <addaction name="actionEdit_Run_ZPL_Macros"/>
+    <addaction name="actionRefresh_Macro_List"/>
+    <addaction name="separator"/>
+    <addaction name="actionCENTROID"/>
+    <addaction name="actionCHILD"/>
+    <addaction name="actionDEMO1"/>
+    <addaction name="actionDEMO2"/>
+    <addaction name="actionEDGESAG"/>
+    <addaction name="actionELEMENT_DATA_LISTING"/>
+    <addaction name="actionEXAM1"/>
+    <addaction name="actionEXAM2"/>
+    <addaction name="actionEXAMPLE_FOR_CREATING_AND_READING_TEXT_FILES"/>
+    <addaction name="actionFF_TEST"/>
+    <addaction name="actionFIFTHORD"/>
+    <addaction name="actionGLOBAL"/>
+    <addaction name="actionPARENT"/>
+    <addaction name="actionPHASES"/>
+    <addaction name="actionPLOT2D_TEST"/>
+    <addaction name="actionPLOT_TEST"/>
+    <addaction name="actionPOLDEMO2"/>
+    <addaction name="actionPOLYGON"/>
+    <addaction name="actionSYSTEM"/>
+    <addaction name="actionWAVEFRONT_ABERRATIONS_FROM_SASIAN"/>
+    <addaction name="actionZERNIKE"/>
+    <addaction name="actionZOMMEDGE"/>
+    <addaction name="actionZOOMGMTF"/>
+    <addaction name="actionZPL03"/>
+   </widget>
+   <widget class="QMenu" name="menuExtensions">
+    <property name="title">
+     <string>扩展</string>
+    </property>
+    <addaction name="actionExtensions"/>
+    <addaction name="actionRefresh_Extensions_List"/>
+    <addaction name="separator"/>
+    <addaction name="actionARRAYDEMO"/>
+    <addaction name="actionCOMMAND_LINE_INTERFACE"/>
+    <addaction name="actionDDE_DEMO"/>
+    <addaction name="actionNSCTRACEDEMO"/>
+    <addaction name="actionPHASEPLOT"/>
+    <addaction name="actionPUPIL_MAP"/>
+    <addaction name="actionSAGCALCULATION"/>
+    <addaction name="actionTRANSMISSIONPLOT"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionLens_Data_Editor"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelo"/>
+    <addaction name="actionManual"/>
+    <addaction name="actionGetting_Started_Using"/>
+   </widget>
+   <addaction name="menufile"/>
+   <addaction name="menuedit"/>
+   <addaction name="menusystem"/>
+   <addaction name="menuanalyse"/>
+   <addaction name="menutool"/>
+   <addaction name="menureport"/>
+   <addaction name="menuMacros"/>
+   <addaction name="menuExtensions"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSave_Ad"/>
+   <addaction name="actionBackup_To_Archive_File"/>
+   <addaction name="actionRestore_From_Archive_File"/>
+   <addaction name="separator"/>
+   <addaction name="actionLens_Data"/>
+   <addaction name="actionMerit_Function"/>
+   <addaction name="actionMulti_Configuration"/>
+   <addaction name="actionTolerance_Data"/>
+   <addaction name="actionExtra_Data"/>
+   <addaction name="separator"/>
+   <addaction name="actionUpdate"/>
+   <addaction name="actionUpdate_All"/>
+   <addaction name="actionGeneral"/>
+   <addaction name="actionFields"/>
+   <addaction name="actionWavelengths"/>
+   <addaction name="separator"/>
+   <addaction name="action2D_Layout"/>
+   <addaction name="action3D_Layout"/>
+   <addaction name="actionShaded_Model"/>
+   <addaction name="actionRay_Aberration"/>
+   <addaction name="actionOptical_Path"/>
+   <addaction name="actionStandard"/>
+   <addaction name="actionFFT_MTF"/>
+   <addaction name="actionFFT_PSF"/>
+   <addaction name="actionRMS_vs_Field"/>
+   <addaction name="actionDiffraction"/>
+   <addaction name="separator"/>
+   <addaction name="actionLocal_Optimization"/>
+   <addaction name="actionGlobal_Optimization"/>
+   <addaction name="actionHammer_Optimization"/>
+   <addaction name="actionTolerancing_2"/>
+   <addaction name="separator"/>
+   <addaction name="actionGlass_Catalogs"/>
+   <addaction name="actionLens_Catalogs"/>
+   <addaction name="actionSystem_Data"/>
+   <addaction name="actionPrescription_Data"/>
+   <addaction name="actionSystem_Check"/>
+   <addaction name="actionVisual_Optimization"/>
+  </widget>
+  <action name="actionNew">
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="iconText">
+    <string>new</string>
+   </property>
+   <property name="toolTip">
+    <string>新建文件</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>打开...</string>
+   </property>
+   <property name="iconText">
+    <string>Ope</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="iconText">
+    <string>Sav</string>
+   </property>
+   <property name="toolTip">
+    <string>保存文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_Ad">
+   <property name="text">
+    <string>另存为...</string>
+   </property>
+   <property name="iconText">
+    <string>Sas</string>
+   </property>
+  </action>
+  <action name="actionUse_Session_Files">
+   <property name="text">
+    <string>Use Session Files</string>
+   </property>
+  </action>
+  <action name="actionBackup_To_Archive_File">
+   <property name="text">
+    <string>备份到存档文件...</string>
+   </property>
+   <property name="iconText">
+    <string>Bac</string>
+   </property>
+   <property name="toolTip">
+    <string>备份到存档文件</string>
+   </property>
+  </action>
+  <action name="actionRestore_From_Archive_File">
+   <property name="text">
+    <string>从存档文件恢复...</string>
+   </property>
+   <property name="iconText">
+    <string>Res</string>
+   </property>
+  </action>
+  <action name="actionSequential_or_Mixed_Sequential_Non_Sequential_Mode">
+   <property name="text">
+    <string>Sequential or Mixed Sequential/Non-Sequential Mode</string>
+   </property>
+  </action>
+  <action name="actionNon_Sequential_Mode">
+   <property name="text">
+    <string>Non-Sequential Mode</string>
+   </property>
+  </action>
+  <action name="actionInsert_Lens">
+   <property name="text">
+    <string>Insert Lens</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionLens_Data">
+   <property name="text">
+    <string>镜头数据</string>
+   </property>
+   <property name="iconText">
+    <string>LDE</string>
+   </property>
+   <property name="toolTip">
+    <string>镜头数据编辑器</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F1</string>
+   </property>
+  </action>
+  <action name="actionMerit_Function">
+   <property name="text">
+    <string>评价函数</string>
+   </property>
+   <property name="iconText">
+    <string>MFE</string>
+   </property>
+   <property name="toolTip">
+    <string>评价函数编辑器</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="actionMulti_Configuration">
+   <property name="text">
+    <string>多重结构</string>
+   </property>
+   <property name="iconText">
+    <string>MCE</string>
+   </property>
+   <property name="toolTip">
+    <string>多重组态编辑器</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Data">
+   <property name="text">
+    <string>公差数据</string>
+   </property>
+   <property name="iconText">
+    <string>TDE</string>
+   </property>
+   <property name="toolTip">
+    <string>公差数据编辑器</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F2</string>
+   </property>
+  </action>
+  <action name="actionExtra_Data">
+   <property name="text">
+    <string>附加数据</string>
+   </property>
+   <property name="iconText">
+    <string>EDE</string>
+   </property>
+   <property name="toolTip">
+    <string>附加数据编辑器</string>
+   </property>
+   <property name="shortcut">
+    <string>F8</string>
+   </property>
+  </action>
+  <action name="actionNon_Sequential_Components">
+   <property name="text">
+    <string>Non-Sequential Components</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="text">
+    <string>更新</string>
+   </property>
+   <property name="iconText">
+    <string>Upd</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionUpdate_All">
+   <property name="text">
+    <string>全部更新</string>
+   </property>
+   <property name="iconText">
+    <string>Upa</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
+   </property>
+  </action>
+  <action name="actionGeneral">
+   <property name="text">
+    <string>基本设置...</string>
+   </property>
+   <property name="iconText">
+    <string>Gen</string>
+   </property>
+   <property name="toolTip">
+    <string>通用镜头数据</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionFields">
+   <property name="text">
+    <string>视场...</string>
+   </property>
+   <property name="iconText">
+    <string>Fie</string>
+   </property>
+   <property name="toolTip">
+    <string>视场数据</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionWavelengths">
+   <property name="text">
+    <string>波长...</string>
+   </property>
+   <property name="iconText">
+    <string>Wav</string>
+   </property>
+   <property name="toolTip">
+    <string>波长数据</string>
+   </property>
+  </action>
+  <action name="actionNext_Configuration">
+   <property name="text">
+    <string>Next Configuration</string>
+   </property>
+  </action>
+  <action name="actionLast_Configuration">
+   <property name="text">
+    <string>Last Configuration</string>
+   </property>
+  </action>
+  <action name="actionSurface_Data">
+   <property name="text">
+    <string>Surface Data</string>
+   </property>
+  </action>
+  <action name="actionSystem_Data">
+   <property name="text">
+    <string>系统数据</string>
+   </property>
+   <property name="iconText">
+    <string>Sys</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
+  </action>
+  <action name="actionPrescription_Data">
+   <property name="text">
+    <string>分类数据</string>
+   </property>
+   <property name="iconText">
+    <string>Pre</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionSystem_Check">
+   <property name="text">
+    <string>系统检查</string>
+   </property>
+   <property name="iconText">
+    <string>Chk</string>
+   </property>
+  </action>
+  <action name="actionEdit_Run_ZPL_Macros">
+   <property name="text">
+    <string>Edit/Run ZPL Macros</string>
+   </property>
+  </action>
+  <action name="actionRefresh_Macro_List">
+   <property name="text">
+    <string>Refresh Macro List</string>
+   </property>
+  </action>
+  <action name="actionCENTROID">
+   <property name="text">
+    <string>CENTROID</string>
+   </property>
+  </action>
+  <action name="actionCHILD">
+   <property name="text">
+    <string>CHILD</string>
+   </property>
+  </action>
+  <action name="actionDEMO1">
+   <property name="text">
+    <string>DEMO1</string>
+   </property>
+  </action>
+  <action name="actionDEMO2">
+   <property name="text">
+    <string>DEMO2</string>
+   </property>
+  </action>
+  <action name="actionEDGESAG">
+   <property name="text">
+    <string>EDGESAG</string>
+   </property>
+  </action>
+  <action name="actionELEMENT_DATA_LISTING">
+   <property name="text">
+    <string>ELEMENT DATA LISTING</string>
+   </property>
+  </action>
+  <action name="actionEXAM1">
+   <property name="text">
+    <string>EXAM1</string>
+   </property>
+  </action>
+  <action name="actionEXAM2">
+   <property name="text">
+    <string>EXAM2</string>
+   </property>
+  </action>
+  <action name="actionEXAMPLE_FOR_CREATING_AND_READING_TEXT_FILES">
+   <property name="text">
+    <string>EXAMPLE FOR CREATING AND READING TEXT FILES</string>
+   </property>
+  </action>
+  <action name="actionFF_TEST">
+   <property name="text">
+    <string>FF_TEST</string>
+   </property>
+  </action>
+  <action name="actionFIFTHORD">
+   <property name="text">
+    <string>FIFTHORD</string>
+   </property>
+  </action>
+  <action name="actionGLOBAL">
+   <property name="text">
+    <string>GLOBAL</string>
+   </property>
+  </action>
+  <action name="actionPARENT">
+   <property name="text">
+    <string>PARENT</string>
+   </property>
+  </action>
+  <action name="actionPHASES">
+   <property name="text">
+    <string>PHASES</string>
+   </property>
+  </action>
+  <action name="actionPLOT2D_TEST">
+   <property name="text">
+    <string>PLOT2D_TEST</string>
+   </property>
+  </action>
+  <action name="actionPLOT_TEST">
+   <property name="text">
+    <string>PLOT_TEST</string>
+   </property>
+  </action>
+  <action name="actionPOLDEMO2">
+   <property name="text">
+    <string>POLDEMO2</string>
+   </property>
+  </action>
+  <action name="actionPOLYGON">
+   <property name="text">
+    <string>POLYGON</string>
+   </property>
+  </action>
+  <action name="actionSYSTEM">
+   <property name="text">
+    <string>SYSTEM</string>
+   </property>
+  </action>
+  <action name="actionWAVEFRONT_ABERRATIONS_FROM_SASIAN">
+   <property name="text">
+    <string>WAVEFRONT ABERRATIONS FROM SASIAN</string>
+   </property>
+  </action>
+  <action name="actionZERNIKE">
+   <property name="text">
+    <string>ZERNIKE</string>
+   </property>
+  </action>
+  <action name="actionZOMMEDGE">
+   <property name="text">
+    <string>ZOOMEDGE</string>
+   </property>
+  </action>
+  <action name="actionZOOMGMTF">
+   <property name="text">
+    <string>ZOOMGMTF</string>
+   </property>
+  </action>
+  <action name="actionZPL03">
+   <property name="text">
+    <string>ZPL03</string>
+   </property>
+  </action>
+  <action name="actionExtensions">
+   <property name="text">
+    <string>Extensions</string>
+   </property>
+  </action>
+  <action name="actionRefresh_Extensions_List">
+   <property name="text">
+    <string>Refresh Extensions List</string>
+   </property>
+  </action>
+  <action name="actionARRAYDEMO">
+   <property name="text">
+    <string>ARRAYDEMO</string>
+   </property>
+  </action>
+  <action name="actionCOMMAND_LINE_INTERFACE">
+   <property name="text">
+    <string>COMMAND LINE INTERFACE</string>
+   </property>
+  </action>
+  <action name="actionDDE_DEMO">
+   <property name="text">
+    <string>DDE_DEMO</string>
+   </property>
+  </action>
+  <action name="actionNSCTRACEDEMO">
+   <property name="text">
+    <string>NSCTRACEDEMO</string>
+   </property>
+  </action>
+  <action name="actionPHASEPLOT">
+   <property name="text">
+    <string>PHASEPLOT</string>
+   </property>
+  </action>
+  <action name="actionPUPIL_MAP">
+   <property name="text">
+    <string>PUPIL_MAP</string>
+   </property>
+  </action>
+  <action name="actionSAGCALCULATION">
+   <property name="text">
+    <string>SAGCALCULATION</string>
+   </property>
+  </action>
+  <action name="actionTRANSMISSIONPLOT">
+   <property name="text">
+    <string>TRANSMISSIONPLOT</string>
+   </property>
+  </action>
+  <action name="actionLens_Data_Editor">
+   <property name="text">
+    <string>Lens Data Editor</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionHelo">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionManual">
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </action>
+  <action name="actionGetting_Started_Using">
+   <property name="text">
+    <string>Getting Started Using</string>
+   </property>
+  </action>
+  <action name="action2D_Layout">
+   <property name="text">
+    <string>2D 视图</string>
+   </property>
+   <property name="iconText">
+    <string>Lay</string>
+   </property>
+   <property name="toolTip">
+    <string>2维布局图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action3D_Layout">
+   <property name="text">
+    <string>3D 视图</string>
+   </property>
+   <property name="iconText">
+    <string>L3d</string>
+   </property>
+   <property name="toolTip">
+    <string>3维布局图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
+   </property>
+  </action>
+  <action name="actionShaded_Model">
+   <property name="text">
+    <string>阴影模型</string>
+   </property>
+   <property name="iconText">
+    <string>Lsh</string>
+   </property>
+   <property name="toolTip">
+    <string>阴影模型布局图</string>
+   </property>
+  </action>
+  <action name="actionZemax_Element_Drawing">
+   <property name="text">
+    <string>Zemax Element Drawing</string>
+   </property>
+  </action>
+  <action name="actionISO_Element_Drawing">
+   <property name="text">
+    <string>ISO Element Drawing</string>
+   </property>
+  </action>
+  <action name="actionNSC_3D_Layout">
+   <property name="text">
+    <string>NSC 3D Layout</string>
+   </property>
+  </action>
+  <action name="actionNSC_Shaded_Model">
+   <property name="text">
+    <string>NSC Shaded Model</string>
+   </property>
+  </action>
+  <action name="actionNSC_Object_Viewer">
+   <property name="text">
+    <string>NSC Object Viewer</string>
+   </property>
+  </action>
+  <action name="actionCAD_File_Part_Viewer">
+   <property name="text">
+    <string>CAD File Part Viewer</string>
+   </property>
+  </action>
+  <action name="actionRay_Aberration">
+   <property name="text">
+    <string>光线像差</string>
+   </property>
+   <property name="iconText">
+    <string>Ray</string>
+   </property>
+   <property name="toolTip">
+    <string>光线光扇</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionOptical_Path">
+   <property name="text">
+    <string>光程差</string>
+   </property>
+   <property name="iconText">
+    <string>Opd</string>
+   </property>
+   <property name="toolTip">
+    <string>光程差光扇</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
+  </action>
+  <action name="actionPupil_Aberration">
+   <property name="text">
+    <string>Pupil Aberration</string>
+   </property>
+  </action>
+  <action name="actionStandard">
+   <property name="text">
+    <string>标准</string>
+   </property>
+   <property name="iconText">
+    <string>Spt</string>
+   </property>
+   <property name="toolTip">
+    <string>点列图</string>
+   </property>
+  </action>
+  <action name="actionThrough_Focus">
+   <property name="text">
+    <string>Through Focus</string>
+   </property>
+  </action>
+  <action name="actionFull_Field">
+   <property name="text">
+    <string>Full Field</string>
+   </property>
+  </action>
+  <action name="actionMatrix">
+   <property name="text">
+    <string>Matrix</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_Matrix">
+   <property name="text">
+    <string>Configuration Matrix</string>
+   </property>
+  </action>
+  <action name="actionFFT_MTF">
+   <property name="text">
+    <string>FFT MTF</string>
+   </property>
+   <property name="iconText">
+    <string>Mtf</string>
+   </property>
+   <property name="toolTip">
+    <string>调制TF</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionFFT_Through_Focus_MTF">
+   <property name="text">
+    <string>FFT Through Focus MTF</string>
+   </property>
+  </action>
+  <action name="actionFFT_Surface_MTF">
+   <property name="text">
+    <string>FFT Surface MTF</string>
+   </property>
+  </action>
+  <action name="actionFFT_MTF_vs_Field">
+   <property name="text">
+    <string>FFT MTF vs. Field</string>
+   </property>
+  </action>
+  <action name="actionFFT_MTF_Map">
+   <property name="text">
+    <string>FFT MTF Map</string>
+   </property>
+  </action>
+  <action name="actionHuygens_MTF">
+   <property name="text">
+    <string>Huygens MTF</string>
+   </property>
+  </action>
+  <action name="actionHuygens_Through_Focus_MTF">
+   <property name="text">
+    <string>Huygens Through Focus MTF</string>
+   </property>
+  </action>
+  <action name="actionHuygens_Surface_MTF">
+   <property name="text">
+    <string>Huygens Surface MTF</string>
+   </property>
+  </action>
+  <action name="actionHuygens_MTF_vs_Field">
+   <property name="text">
+    <string>Huygens MTF vs. Field</string>
+   </property>
+  </action>
+  <action name="actionGeometric_MTF">
+   <property name="text">
+    <string>Geometric MTF</string>
+   </property>
+  </action>
+  <action name="actionGeometric_Through_Focus_MTF">
+   <property name="text">
+    <string>Geometric Through Focus MTF</string>
+   </property>
+  </action>
+  <action name="actionGeometric_MTF_vs_Field">
+   <property name="text">
+    <string>Geometric MTF vs. Field</string>
+   </property>
+  </action>
+  <action name="actionGeometric_MTF_Map">
+   <property name="text">
+    <string>Geometric MTF Map</string>
+   </property>
+  </action>
+  <action name="actionFFT_PSF">
+   <property name="text">
+    <string>FFT点扩散函数</string>
+   </property>
+   <property name="iconText">
+    <string>Fps</string>
+   </property>
+   <property name="toolTip">
+    <string>FFT PSF</string>
+   </property>
+  </action>
+  <action name="actionFFT_PSF_Cross_Section">
+   <property name="text">
+    <string>FFT PSF Cross Section</string>
+   </property>
+  </action>
+  <action name="actionFFT_Line_Edge_Spread">
+   <property name="text">
+    <string>FFT Line/Edge Spread</string>
+   </property>
+  </action>
+  <action name="actionHuygens_PSF">
+   <property name="text">
+    <string>Huygens PSF</string>
+   </property>
+  </action>
+  <action name="actionHuygens_PSF_Cross_Section">
+   <property name="text">
+    <string>Huygens PSF Cross Section</string>
+   </property>
+  </action>
+  <action name="actionWavefront_Map">
+   <property name="text">
+    <string>Wavefront Map</string>
+   </property>
+  </action>
+  <action name="actionInterferogram">
+   <property name="text">
+    <string>Interferogram</string>
+   </property>
+  </action>
+  <action name="actionFoucault">
+   <property name="text">
+    <string>Foucault Analysis</string>
+   </property>
+  </action>
+  <action name="actionSurface_Sag">
+   <property name="text">
+    <string>Surface Sag</string>
+   </property>
+  </action>
+  <action name="actionSurface_Phase">
+   <property name="text">
+    <string>Surface Curvature</string>
+   </property>
+  </action>
+  <action name="actionSurface_2">
+   <property name="text">
+    <string>Surface Sag Cross Section</string>
+   </property>
+  </action>
+  <action name="actionSurface_Phase_Cross_Section">
+   <property name="text">
+    <string>Surface Phase Cross Section</string>
+   </property>
+  </action>
+  <action name="actionSurface_Curvature_Cross_Section">
+   <property name="text">
+    <string>Surface Curvature Cross Section</string>
+   </property>
+  </action>
+  <action name="actionRMS_vs_Field">
+   <property name="text">
+    <string>RMS vs. 视场</string>
+   </property>
+   <property name="iconText">
+    <string>Rms</string>
+   </property>
+  </action>
+  <action name="actionRMS_vs_Wavelength">
+   <property name="text">
+    <string>RMS vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionRMS_vs_Focus">
+   <property name="text">
+    <string>RMS vs. Focus</string>
+   </property>
+  </action>
+  <action name="actionRMS_Field_Map">
+   <property name="text">
+    <string>RMS Field Map</string>
+   </property>
+  </action>
+  <action name="actionDiffraction">
+   <property name="text">
+    <string>衍射</string>
+   </property>
+   <property name="iconText">
+    <string>Enc</string>
+   </property>
+   <property name="toolTip">
+    <string>衍射圈入能量</string>
+   </property>
+  </action>
+  <action name="actionGeometric">
+   <property name="text">
+    <string>Geometric</string>
+   </property>
+  </action>
+  <action name="actionGeometric_Line_Edge_Spread">
+   <property name="text">
+    <string>Geometric Line/Edge Spread</string>
+   </property>
+  </action>
+  <action name="actionExtended_Source">
+   <property name="text">
+    <string>Extended Source</string>
+   </property>
+  </action>
+  <action name="actionImage_Simulation_2">
+   <property name="text">
+    <string>Image Simulation</string>
+   </property>
+  </action>
+  <action name="actionGeometric_Image_Analysis">
+   <property name="text">
+    <string>Geometric Image Analysis</string>
+   </property>
+  </action>
+  <action name="actionGeometric_Bitmap_Image_Analysis">
+   <property name="text">
+    <string>Geometric Bitmap Image Analysis</string>
+   </property>
+  </action>
+  <action name="actionLight_Source_Analysis">
+   <property name="text">
+    <string>Light Source Analysis</string>
+   </property>
+  </action>
+  <action name="actionPartially_Coherent_Image_Analysis">
+   <property name="text">
+    <string>Partially Coherent Image Analysis</string>
+   </property>
+  </action>
+  <action name="actionExtended_Diffraction_Image_Analysis">
+   <property name="text">
+    <string>Extended Diffraction Image Analysis</string>
+   </property>
+  </action>
+  <action name="actionIMA_BIM_File_Viewer">
+   <property name="text">
+    <string>IMA/BIM File Viewer</string>
+   </property>
+  </action>
+  <action name="actionBitmap_File_Viewer">
+   <property name="text">
+    <string>Bitmap File Viewer</string>
+   </property>
+  </action>
+  <action name="actionField_Of_View">
+   <property name="text">
+    <string>Field Of View</string>
+   </property>
+  </action>
+  <action name="actionDipvergence_Convergence">
+   <property name="text">
+    <string>Dipvergence/Convergence</string>
+   </property>
+  </action>
+  <action name="actionField_Curv_Distortion">
+   <property name="text">
+    <string>Field Curv/Distortion</string>
+   </property>
+  </action>
+  <action name="actionGrid_Distortion">
+   <property name="text">
+    <string>Grid Distortion</string>
+   </property>
+  </action>
+  <action name="actionRelative_Illumination">
+   <property name="text">
+    <string>Relative Illumination</string>
+   </property>
+  </action>
+  <action name="actionVignetting_Plot">
+   <property name="text">
+    <string>Vignetting Plot</string>
+   </property>
+  </action>
+  <action name="actionFootprint_Diagram">
+   <property name="text">
+    <string>Footprint Diagram</string>
+   </property>
+  </action>
+  <action name="actionLongitudinal_Aberration">
+   <property name="text">
+    <string>Longitudinal Aberration</string>
+   </property>
+  </action>
+  <action name="actionLatreral_Color">
+   <property name="text">
+    <string>Latreral Color</string>
+   </property>
+  </action>
+  <action name="actionY_Ybar_Drawing">
+   <property name="text">
+    <string>Y-Ybar Drawing</string>
+   </property>
+  </action>
+  <action name="actionChromatic_Focal_Shift">
+   <property name="text">
+    <string>Chromatic Focal Shift</string>
+   </property>
+  </action>
+  <action name="actionSystem_Summary_Graphic">
+   <property name="text">
+    <string>System Summary Graphic</string>
+   </property>
+  </action>
+  <action name="actionPower_Field_Map">
+   <property name="text">
+    <string>Power Field Map</string>
+   </property>
+  </action>
+  <action name="actionPower_Pupil_Map">
+   <property name="text">
+    <string>Power Pupil Map</string>
+   </property>
+  </action>
+  <action name="actionIncident_Angle_vs_Image_Height">
+   <property name="text">
+    <string>Incident Angle vs. Image Height</string>
+   </property>
+  </action>
+  <action name="actionSeidel_Coefficients">
+   <property name="text">
+    <string>Seidel Coefficients</string>
+   </property>
+  </action>
+  <action name="actionSeidel_Diagram">
+   <property name="text">
+    <string>Seidel Diagram</string>
+   </property>
+  </action>
+  <action name="actionZernike_Fringe_Coefficients">
+   <property name="text">
+    <string>Zernike Fringe Coefficients</string>
+   </property>
+  </action>
+  <action name="actionZernike_Standard_Coefficients">
+   <property name="text">
+    <string>Zernike Standard Coefficients</string>
+   </property>
+  </action>
+  <action name="actionZernike_Annular_Coefficients">
+   <property name="text">
+    <string>Zernike Annular Coefficients</string>
+   </property>
+  </action>
+  <action name="actionZernike_Coefficients_vs_Field">
+   <property name="text">
+    <string>Zernike Coefficients vs. Field</string>
+   </property>
+  </action>
+  <action name="actionRay_Trace">
+   <property name="text">
+    <string>Ray Trace</string>
+   </property>
+  </action>
+  <action name="actionFiber_Coupling_Efficiency">
+   <property name="text">
+    <string>Fiber Coupling Efficiency</string>
+   </property>
+  </action>
+  <action name="actionYNI_Contributions">
+   <property name="text">
+    <string>YNI Contributions</string>
+   </property>
+  </action>
+  <action name="actionSag_Table">
+   <property name="text">
+    <string>Sag Table</string>
+   </property>
+  </action>
+  <action name="actionCardinal_Points">
+   <property name="text">
+    <string>Cardinal Points</string>
+   </property>
+  </action>
+  <action name="actionDispersion_Diagram">
+   <property name="text">
+    <string>Dispersion Diagram</string>
+   </property>
+  </action>
+  <action name="actionGlass_Map">
+   <property name="text">
+    <string>Glass Map</string>
+   </property>
+  </action>
+  <action name="actionAthermal_Glass_Map">
+   <property name="text">
+    <string>Athermal Glass Map</string>
+   </property>
+  </action>
+  <action name="actionInternal_Transmission_vx_Wavelength">
+   <property name="text">
+    <string>Internal Transmission vx. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionDispersion_vs_Wavelength">
+   <property name="text">
+    <string>Dispersion vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionGrin_Profile">
+   <property name="text">
+    <string>Grin Profile</string>
+   </property>
+  </action>
+  <action name="actionGradium_Profile">
+   <property name="text">
+    <string>Gradium Profile</string>
+   </property>
+  </action>
+  <action name="actionNew_Universal_Plot_1D">
+   <property name="text">
+    <string>New Universal Plot 1D</string>
+   </property>
+  </action>
+  <action name="actionTEST_OLD">
+   <property name="text">
+    <string>TEST_OLD</string>
+   </property>
+  </action>
+  <action name="actionNew_Universal_Plot_2D">
+   <property name="text">
+    <string>New Universal Plot 2D</string>
+   </property>
+  </action>
+  <action name="actionPolarization_Ray_Trace">
+   <property name="text">
+    <string>Polarization Ray Trace</string>
+   </property>
+  </action>
+  <action name="actionPolarization_Pupil_Map">
+   <property name="text">
+    <string>Polarization Pupil Map</string>
+   </property>
+  </action>
+  <action name="actionTransmission">
+   <property name="text">
+    <string>Transmission</string>
+   </property>
+  </action>
+  <action name="actionPhase_Aberration">
+   <property name="text">
+    <string>Phase Aberration</string>
+   </property>
+  </action>
+  <action name="actionTransmission_Fan">
+   <property name="text">
+    <string>Transmission Fan</string>
+   </property>
+  </action>
+  <action name="actionReflection_vs_Angle">
+   <property name="text">
+    <string>Reflection vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionTransmission_vs_Angle">
+   <property name="text">
+    <string>Transmission vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionAbsorption_vs_Angle">
+   <property name="text">
+    <string>Absorption vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionDiattenuation_vs_Angle">
+   <property name="text">
+    <string>Diattenuation vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionPhase_vs_Angle">
+   <property name="text">
+    <string>Phase vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionReflection_vs_Wavelength">
+   <property name="text">
+    <string>Reflection vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionTransmission_vs_Wavelength">
+   <property name="text">
+    <string>Transmission vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionAbsorption_vs_Wavelength">
+   <property name="text">
+    <string>Absorption vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionDiattenuation_vs_Wavelength">
+   <property name="text">
+    <string>Diattenuation vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionPhase_vs_Wavelength">
+   <property name="text">
+    <string>Phase vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionRetardance_vs_Wavelength">
+   <property name="text">
+    <string>Retardance vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionRetardance">
+   <property name="text">
+    <string>Retardance vs. Angle</string>
+   </property>
+  </action>
+  <action name="actionParaxial_Gaussian_Beam">
+   <property name="text">
+    <string>Paraxial Gaussian Beam</string>
+   </property>
+  </action>
+  <action name="actionSkew_Gaussian_Beam">
+   <property name="text">
+    <string>Skew Gaussian Beam</string>
+   </property>
+  </action>
+  <action name="actionPhysical_Optics_Propagation">
+   <property name="text">
+    <string>Physical Optics Propagation</string>
+   </property>
+  </action>
+  <action name="actionBeam_File_Viewer">
+   <property name="text">
+    <string>Beam File Viewer</string>
+   </property>
+  </action>
+  <action name="actionRay_Trace_2">
+   <property name="text">
+    <string>Ray Trace</string>
+   </property>
+  </action>
+  <action name="actionLighting_Trace">
+   <property name="text">
+    <string>Lighting Trace</string>
+   </property>
+  </action>
+  <action name="actionDetector_Viewer">
+   <property name="text">
+    <string>Detector Viewer</string>
+   </property>
+  </action>
+  <action name="actionRay_Database_Viewer">
+   <property name="text">
+    <string>Ray Database Viewer</string>
+   </property>
+  </action>
+  <action name="actionReverseRadiance_Analysis">
+   <property name="text">
+    <string>ReverseRadiance Analysis</string>
+   </property>
+  </action>
+  <action name="actionPath_Analysis">
+   <property name="text">
+    <string>Path Analysis</string>
+   </property>
+  </action>
+  <action name="actionFlux_vs_Wavelength">
+   <property name="text">
+    <string>Flux vs. Wavelength</string>
+   </property>
+  </action>
+  <action name="actionDirectivity_Plot">
+   <property name="text">
+    <string>Directivity Plot</string>
+   </property>
+  </action>
+  <action name="actionPolar_Plot">
+   <property name="text">
+    <string>Polar Plot</string>
+   </property>
+  </action>
+  <action name="actionIllumination_Map">
+   <property name="text">
+    <string>Illumination Map</string>
+   </property>
+  </action>
+  <action name="actionSpectrum_Plot">
+   <property name="text">
+    <string>Spectrum Plot</string>
+   </property>
+  </action>
+  <action name="actionRadiant_Source_Model_Viewer">
+   <property name="text">
+    <string>Radiant Source Model Viewer</string>
+   </property>
+  </action>
+  <action name="actionCIE_1931_Color_Chart">
+   <property name="text">
+    <string>CIE 1931 Color Chart</string>
+   </property>
+  </action>
+  <action name="actionCIE_1976_Color_Chart">
+   <property name="text">
+    <string>CIE 1976 Color Chart</string>
+   </property>
+  </action>
+  <action name="actionPolar_Plot_2">
+   <property name="text">
+    <string>Polar Plot</string>
+   </property>
+  </action>
+  <action name="actionScatter_Function_Viewer">
+   <property name="text">
+    <string>Scatter Function Viewer</string>
+   </property>
+  </action>
+  <action name="actionWireframe">
+   <property name="text">
+    <string>Wireframe</string>
+   </property>
+  </action>
+  <action name="actionSolid_Model">
+   <property name="text">
+    <string>Solid Model</string>
+   </property>
+  </action>
+  <action name="actionIllumination_XY_Scan">
+   <property name="text">
+    <string>Illumination XY Scan</string>
+   </property>
+  </action>
+  <action name="actionIllumination_2D_Surface">
+   <property name="text">
+    <string>Illumination 2D Surface</string>
+   </property>
+  </action>
+  <action name="actionExport_IGES_Line_Work">
+   <property name="text">
+    <string>Export IGES Line Work</string>
+   </property>
+  </action>
+  <action name="actionExport_2D_DXF_File">
+   <property name="text">
+    <string>Export 2D DXF File</string>
+   </property>
+  </action>
+  <action name="actionExport_3D_DXF_File">
+   <property name="text">
+    <string>Export 3D DXF File</string>
+   </property>
+  </action>
+  <action name="actionConjugate_Surface_Analysis">
+   <property name="text">
+    <string>Conjugate Surface Analysis</string>
+   </property>
+  </action>
+  <action name="actionLocal_Optimization">
+   <property name="text">
+    <string>局部优化...</string>
+   </property>
+   <property name="iconText">
+    <string>Opt</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="actionGlobal_Optimization">
+   <property name="text">
+    <string>全局优化...</string>
+   </property>
+   <property name="iconText">
+    <string>Glb</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+G</string>
+   </property>
+  </action>
+  <action name="actionHammer_Optimization">
+   <property name="text">
+    <string>锤型优化...</string>
+   </property>
+   <property name="iconText">
+    <string>Ham</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+H</string>
+   </property>
+  </action>
+  <action name="actionVisual_Optimization">
+   <property name="text">
+    <string>视觉优化...</string>
+   </property>
+   <property name="iconText">
+    <string>Vop</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+V</string>
+   </property>
+  </action>
+  <action name="actionQuick_Focus">
+   <property name="text">
+    <string>Quick Focus</string>
+   </property>
+  </action>
+  <action name="actionQuick_Adjust">
+   <property name="text">
+    <string>Quick Adjust</string>
+   </property>
+  </action>
+  <action name="actionSlider">
+   <property name="text">
+    <string>Slider</string>
+   </property>
+  </action>
+  <action name="actionFind_Best_Asphere">
+   <property name="text">
+    <string>Find Best Asphere</string>
+   </property>
+  </action>
+  <action name="actionConvert_Asphere_Type">
+   <property name="text">
+    <string>Convert Asphere Type</string>
+   </property>
+  </action>
+  <action name="actionMerit_Function_Listing">
+   <property name="text">
+    <string>Merit Function Listing</string>
+   </property>
+  </action>
+  <action name="actionGlass_Substitution_Template">
+   <property name="text">
+    <string>Glass Substitution Template</string>
+   </property>
+  </action>
+  <action name="actionStock_Lens_Matching">
+   <property name="text">
+    <string>Stock Lens Matching</string>
+   </property>
+  </action>
+  <action name="actionRemove_All_Variables">
+   <property name="text">
+    <string>Remove All Variables</string>
+   </property>
+  </action>
+  <action name="actionMake_All_Radii_Variable">
+   <property name="text">
+    <string>Make All Radii Variable</string>
+   </property>
+  </action>
+  <action name="actionMake_All_Thicknesses_Variable">
+   <property name="text">
+    <string>Make All Thicknesses Variable</string>
+   </property>
+  </action>
+  <action name="actionZemax_Part_Designer">
+   <property name="text">
+    <string>Zemax Part Designer</string>
+   </property>
+  </action>
+  <action name="actionTilt_Decenter_Elements">
+   <property name="text">
+    <string>Tilt/Decenter Elements</string>
+   </property>
+  </action>
+  <action name="actionReverse_Elements">
+   <property name="text">
+    <string>Reverse Elements</string>
+   </property>
+  </action>
+  <action name="actionScale_Lens">
+   <property name="text">
+    <string>Scale Lens</string>
+   </property>
+  </action>
+  <action name="actionMake_Focal">
+   <property name="text">
+    <string>Make Focal</string>
+   </property>
+  </action>
+  <action name="actionAdd_Fold_Mirror">
+   <property name="text">
+    <string>Add Fold Mirror</string>
+   </property>
+  </action>
+  <action name="actionDelete_Fold_Mirror">
+   <property name="text">
+    <string>Delete Fold Mirror</string>
+   </property>
+  </action>
+  <action name="actionMake_Double_Pass">
+   <property name="text">
+    <string>Make Double Pass</string>
+   </property>
+  </action>
+  <action name="actionLocal_To_Global">
+   <property name="text">
+    <string>Local To Global</string>
+   </property>
+  </action>
+  <action name="actionGlobal_To_Local">
+   <property name="text">
+    <string>Global To Local</string>
+   </property>
+  </action>
+  <action name="actionConvert_Semi_Diameters_to_Circular_Apertures">
+   <property name="text">
+    <string>Convert Semi-Diameters to Circular Apertures</string>
+   </property>
+  </action>
+  <action name="actionConvert_Semi_Diameters_to_Floating_Apertures">
+   <property name="text">
+    <string>Convert Semi-Diameters to Floating Apertures</string>
+   </property>
+  </action>
+  <action name="actionConvert_Semi_Diameters_to_Maximum_Apertures">
+   <property name="text">
+    <string>Convert Semi-Diameters to Maximum Apertures</string>
+   </property>
+  </action>
+  <action name="actionRemove_All_Apertures">
+   <property name="text">
+    <string>Remove All Apertures</string>
+   </property>
+  </action>
+  <action name="actionReplace_Vignetting_With_Apertures">
+   <property name="text">
+    <string>Replace Vignetting With Apertures</string>
+   </property>
+  </action>
+  <action name="actionTolerancing_2">
+   <property name="text">
+    <string>公差...</string>
+   </property>
+   <property name="iconText">
+    <string>Tol</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Listing">
+   <property name="text">
+    <string>Tolerance Listing</string>
+   </property>
+  </action>
+  <action name="actionTolerance_Summary">
+   <property name="text">
+    <string>Tolerance Summary</string>
+   </property>
+  </action>
+  <action name="actionGlass_Catalogs">
+   <property name="text">
+    <string>玻璃数据库...</string>
+   </property>
+   <property name="iconText">
+    <string>Gla</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionGlass_Compare">
+   <property name="text">
+    <string>Glass Compare</string>
+   </property>
+  </action>
+  <action name="actionGlass_Fitting">
+   <property name="text">
+    <string>Glass Fitting</string>
+   </property>
+  </action>
+  <action name="actionLens_Catalogs">
+   <property name="text">
+    <string>镜头库...</string>
+   </property>
+   <property name="iconText">
+    <string>Len</string>
+   </property>
+  </action>
+  <action name="actionMake_Private_Lens_Catalog">
+   <property name="text">
+    <string>Make Private Lens Catalog</string>
+   </property>
+  </action>
+  <action name="actionTest_Plate_Fitting">
+   <property name="text">
+    <string>Test Plate Fitting</string>
+   </property>
+  </action>
+  <action name="actionTest_Plate_Lists">
+   <property name="text">
+    <string>Test Plate Lists</string>
+   </property>
+  </action>
+  <action name="actionEdit_Coating_File">
+   <property name="text">
+    <string>Edit Coating File</string>
+   </property>
+  </action>
+  <action name="actionReload_Coating_File">
+   <property name="text">
+    <string>Reload Coating File</string>
+   </property>
+  </action>
+  <action name="actionAdd_Coatings_to_All_Surfaces">
+   <property name="text">
+    <string>Add Coatings to All Surfaces</string>
+   </property>
+  </action>
+  <action name="actionCoating_Listing">
+   <property name="text">
+    <string>Coating Listing</string>
+   </property>
+  </action>
+  <action name="actionExport_Encrypted_Coating">
+   <property name="text">
+    <string>Export Encrypted Coating</string>
+   </property>
+  </action>
+  <action name="actionExport_CAD_File">
+   <property name="text">
+    <string>Export CAD File</string>
+   </property>
+  </action>
+  <action name="actionExplode_SolidWorks_Assembly">
+   <property name="text">
+    <string>Explode SolidWorks Assembly</string>
+   </property>
+  </action>
+  <action name="actionExplode_Autodesk_Inventor_Assembly">
+   <property name="text">
+    <string>Explode Autodesk Inventor Assembly</string>
+   </property>
+  </action>
+  <action name="actionExplode_Creo_Parametric_Assembly">
+   <property name="text">
+    <string>Explode Creo Parametric Assembly</string>
+   </property>
+  </action>
+  <action name="actionExplode_CAD_Assembly">
+   <property name="text">
+    <string>Explode CAD Assembly</string>
+   </property>
+  </action>
+  <action name="actionExport_Zemax_Black_Box_Data">
+   <property name="text">
+    <string>Export Zemax Black Box Data</string>
+   </property>
+  </action>
+  <action name="actionDownload_Radiant_Source_Model_Data">
+   <property name="text">
+    <string>Download Radiant Source Model Data</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Radiant_Source_Model_Rays">
+   <property name="text">
+    <string>Generate Radiant Source Model Rays</string>
+   </property>
+  </action>
+  <action name="actionDownload_IES_Source_File">
+   <property name="text">
+    <string>Download IES Source File</string>
+   </property>
+  </action>
+  <action name="actionConvert_to_Spectral_Source_File">
+   <property name="text">
+    <string>Convert to Spectral Source File</string>
+   </property>
+  </action>
+  <action name="actionConcatenate_Spectral_Source_Files">
+   <property name="text">
+    <string>Concatenate Spectral Source Files</string>
+   </property>
+  </action>
+  <action name="actionConvert_SDF_To_IES">
+   <property name="text">
+    <string>Convert SDF To IES</string>
+   </property>
+  </action>
+  <action name="actionDownload_IS_Scatter_Catalog_Data">
+   <property name="text">
+    <string>Download IS Scatter Catalog Data</string>
+   </property>
+  </action>
+  <action name="actionABg_Scatter_Data_Catalogs">
+   <property name="text">
+    <string>ABg Scatter Data Catalogs</string>
+   </property>
+  </action>
+  <action name="actionGhost_Focus_Generator">
+   <property name="text">
+    <string>Ghost Focus Generator</string>
+   </property>
+  </action>
+  <action name="actionPerformance_Test">
+   <property name="text">
+    <string>Performance Test</string>
+   </property>
+  </action>
+  <action name="actionLock_All_Windows">
+   <property name="text">
+    <string>Lock All Windows</string>
+   </property>
+  </action>
+  <action name="actionUnlock_All_Windows">
+   <property name="text">
+    <string>Unlock All Windows</string>
+   </property>
+  </action>
+  <action name="actionConvert_To_NSC_Group">
+   <property name="text">
+    <string>Convert To NSC Group</string>
+   </property>
+  </action>
+  <action name="actionConvert_File_Formats">
+   <property name="text">
+    <string>Convert File Formats</string>
+   </property>
+  </action>
+  <action name="actionGenerate_MAT_Files">
+   <property name="text">
+    <string>Generate MAT Files</string>
+   </property>
+  </action>
+  <action name="actionTest_Network_License_Server">
+   <property name="text">
+    <string>Test Network License Server</string>
+   </property>
+  </action>
+  <action name="actionNew_Report_4">
+   <property name="text">
+    <string>New Report 4</string>
+   </property>
+  </action>
+  <action name="actionNew_Report_6">
+   <property name="text">
+    <string>New Report 6</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
